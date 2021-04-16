@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 import time
 import threading
-import multiprocessing
+
 
 #Crea la ventana principal
 main_window = tk.Tk()
@@ -25,7 +25,7 @@ def createLabel(a,b):
 def crearAnimacion(a, b, char):
     mylabel = createLabel(a,b)
     texto=""
-    retardo: float=0.80
+    retardo: float=0.08
     for i in range(0,35):
         time.sleep(retardo)
         texto += char
@@ -34,30 +34,21 @@ def crearAnimacion(a, b, char):
         main_window.update()
 
 #Ejecuta tres animaciones
+thread_1 = threading.Thread(target=crearAnimacion(10,10,'X'))
+thread_2 = threading.Thread(target=crearAnimacion(10,30,'Y'))
+thread_3 = threading.Thread(target=crearAnimacion(10,50,'Z'))
+
+thread_1.start()
+thread_2.start()
+thread_3.start()
 #crearAnimacion(10,10, 'X')
 #crearAnimacion(10,30, 'Y')
 #crearAnimacion(10,50, 'Z')
 
-#CON HILOS
-#thread_1 = threading.Thread(target=crearAnimacion, args=(10,10, 'X'))
-#thread_2 = threading.Thread(target=crearAnimacion, args=(10,30, 'Y'))
-#thread_3 = threading.Thread(target=crearAnimacion, args=(10,50, 'Z'))
 
-#thread_1.start()
-#thread_2.start()
-#thread_3.start()
-if __name__ == '__main__':
-
-    process1 = multiprocessing.Process( name='tarea1',target=crearAnimacion,args=(10,10, 'X'))
-    process2 = multiprocessing.Process( name='tarea2',target=crearAnimacion,args=(10,30, 'Y'))
-    process3 = multiprocessing.Process( name='tarea3',target=crearAnimacion,args=(10,50, 'Z'))
-
-    process1.start()
-    process2.start()
-    process3.start()
 # Mantener las siguientes líneas siempre al final del script y en el mismo orden.
 #Coloca la opcion "Salir"
-    opcionFinalizar()
+opcionFinalizar()
 
 #Bucle principal de la ventana
 main_window.mainloop()

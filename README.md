@@ -28,6 +28,9 @@ Leer y analizar el código y tratar de deducir que hace cada bloque.
 5. Como modificaría el código para utiliar Procesos en lugar de Threads. Que diferencias habría al ejecutarlo?
    Bonus: Implementar el punto 5 en codigo que funcione.
 
-
-
+# 1 Cambiando el parametro que recibe la funcion crearAnimacion(10,10, 'X') - el valor del tercer parametro define el caracter a mostrar por pantalla.
+# 2 El valor de la variable retardo es el encargador de decirle cuanto tiempo "dormir" al proceso. El mismo es utilizado en la funcion time.sleep
+# 3 Se ejecutan de forma secuencial ya que hay una unica funcion y es llamada una atras de otra, pero hasta que no termina la anterior no puede ejecutarse la que sigue.
+# 4 ECHO EN CODIGO
+# 5 
 <sub>[Daniel Buaon - unahur-progra-concu-1-2021](https://github.com/unahur-progra-concu-1-2021)</sub>

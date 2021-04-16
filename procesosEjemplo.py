@@ -7,7 +7,7 @@ def hijo():
 def padre():
     print("Este es el proceso \"padre\" con PID= %d"%os.getpid())
 
-newRef=os.fork()
+newRef= os.fork()
 
 if newRef==0:
     hijo()

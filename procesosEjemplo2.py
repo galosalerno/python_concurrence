@@ -12,7 +12,6 @@ def tarea():
 
 if __name__ == '__main__':
 
-
     worker_1 = multiprocessing.Process( name='tarea 1',target=tarea,)
     worker_2 = multiprocessing.Process( name='tarea 2',target=tarea,)
 
